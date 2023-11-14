@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+/*Importacion de fuentes desde este link*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}  /*Establece estos parametros para todos los elementos*/
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    margin-top: 1%;
+}
+
+.nav > li{
+    list-style: none;
+    cursor: pointer;
+    padding: 1%;
+}
+
+
+
+.finder{   
+    width: 70%;
+    position: relative;
+    padding: 1%;
+    
+}
+.finder > input{
+    
+    border: 0;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: -5px;
+    padding: 1%;
+    background-color: rgba(128, 128, 128, 0.212);
+    
+}
+.finder > input:focus{
+    outline: none;
+}  /*Borde de la barra de busqueda*/
+
+
+.profile img :hover{
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.notification i{
+    font-size: 20px;
+    
+    color: gray;
+    margin-top: 5px;
+
+}
+.notification i:hover{
+    color: rgba(0, 17, 255, 0.733);
+}
+
+/* -- ---------------Fin Barra de busqueda (NAV) --------------- */
+
+.container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,250px);
+    grid-template-rows: auto;
+    justify-content: center;
+    column-gap: 15px;
+    /*Caracteristicas para la clase container*/
+}
+
+.container > div{
+    padding: 0;
+    margin: 15px 10px;
+    border-radius: 20px;
+} /*Regulan tamaño de las imagenes a los div que son hijos directos de container*/
+
+
+.container  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+} /*Caracteristicas para las imagenes dentro del container*/
+
+.card_small{
+    grid-row-end: span 26;
+    position: relative;
+    overflow: hidden;
+}
+
+.card_midium{
+    grid-row-end: span 33;
+    position: relative;
+    overflow: hidden;
+}
+
+.card_large{
+    grid-row-end: span 40;
+    position: relative;
+    overflow: hidden;
+} /*Establece la posición final de un elemento*/
+
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-end; /* Alinea el contenido a la esquina derecha */
+    align-items: flex-start; /* Alinea el contenido en la parte superior */
+    padding: 10px; /* Agrega espacio alrededor del botón */
+    box-sizing: border-box; /* Incluye el relleno en el tamaño total del contenedor */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.search-btn {
+    background-color: red;
+    color: whitesmoke;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+
+
+@media all and(min-width: 421px) and (max-width: 768px){
+    /*condiciones para aplicar los estilos entre 421 píxeles y 768 píxeles.*/
+    .container{
+        grid-template-columns: repeat(auto-fill,200px); 
+        /* en pantallas más pequeñas, colocar columnas con un ancho de 200 píxeles cada una.*/
+    }
+    .search{
+        display: none; /*El elemento con esta clase se ocultará*/
+    }
+    .nav > li:nth-child(2){
+        font-weight: 500;
+        font-size: 15px;
+        /*Le aplica estilos al segundo hijo*/
+    }
+}
+
+@media all and (min-width:50px) and (max-width: 420px){
+    /*condiciones para aplicar los estilos entre 50 píxeles y 420 píxeles.*/
+    .container{
+        grid-template-columns: repeat(auto-fill,150px);
+    }/* en pantallas más pequeñas, colocar columnas con un ancho de 150 píxeles cada una.*/
+    .container > div{
+        padding: 0;
+        margin: 8px 5px;
+        border-radius: 20px;
+    /*Aplica estilos a los div hijos directos de container*/
+    }
+    .nav{
+        padding: 2%; /*Aplica un relleno del 2% */
+    }
+    .finder > input{
+        /* display: none; */
+        padding: 3%;
+    }
+    .nav > li>img{
+        width: 30px;
+        height: 30px;
+        /*Aplica estilos a descendientes directos de un elemento li, descendiente directo de un elemento con la clase .nav.*/
+    }
+    .nav > li {
+        font-size: 12px;
+        
+    }
+    .nav > li i{
+        display: none;
+        /*Oculta elementos i que sean desendientes directos de li en una clase nav*/
+    }
+    .nav > li:nth-child(2){
+        display: none;
+        
+    }
+    .nav > li:nth-child(3){
+        display: none;
+        
+    }
+
+    .nav > li:nth-child(4){
+        display: none;
+        
+    }
+
+}
